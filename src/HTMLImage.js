@@ -40,8 +40,8 @@ export default class HTMLImage extends PureComponent {
         this.mounted = false;
     }
 
-    componentWillReceiveProps (nextProps) {
-        this.getImageSize(nextProps);
+    componentDidUpdate (prevProps, prevState) {
+        this.getImageSize(this.props);
     }
 
     getDimensionsFromStyle (style, height, width) {
@@ -56,19 +56,19 @@ export default class HTMLImage extends PureComponent {
         }
         if (Array.isArray(style)) {
             style.forEach((styles) => {
-                if (!width && styles['width']) {
-                    styleWidth = styles['width'];
+                if (!width && styles.width) {
+                    styleWidth = styles.width;
                 }
-                if (!height && styles['height']) {
-                    styleHeight = styles['height'];
+                if (!height && styles.height) {
+                    styleHeight = styles.height;
                 }
             });
         } else {
-            if (!width && style['width']) {
-                styleWidth = style['width'];
+            if (!width && style.width) {
+                styleWidth = style.width;
             }
-            if (!height && style['height']) {
-                styleHeight = style['height'];
+            if (!height && style.height) {
+                styleHeight = style.height;
             }
         }
 
@@ -105,9 +105,9 @@ export default class HTMLImage extends PureComponent {
     validImage (source, style, props = {}) {
         return (
             <Image
-              source={source}
-              style={[style, { width: this.state.width, height: this.state.height, resizeMode: 'cover' }]}
-              {...props}
+                source={source}
+                style={[style, { width: this.state.width, height: this.state.height, resizeMode: 'cover' }]}
+                {...props}
             />
         );
     }
