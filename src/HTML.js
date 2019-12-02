@@ -75,10 +75,7 @@ export default class HTML extends PureComponent {
             ...HTMLRenderers,
             ...(this.props.renderers || {})
         };
-    }
-
-    componentWillMount () {
-        this.generateDefaultStyles();
+        this.generateDefaultStyles(props.baseFontStyle);
     }
 
     componentDidMount () {
