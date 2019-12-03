@@ -1,5 +1,5 @@
 {
-  "name": "react-native-render-html",
+  "name": "@javanhuang/react-native-render-html",
   "version": "4.1.2",
   "author": "Archriss",
   "license": "BSD-2-Clause",
@@ -11,6 +11,13 @@
     "react-native-component",
     "html",
     "render-html"
+  ],
+  "contributors": [
+    {
+      "name": "Javan Huang",
+      "email": "javanhuangzx@gmail.com",
+      "url": "https://github.com/JavanHuang"
+    }
   ],
   "dependencies": {
     "buffer": "^5.4.3",
