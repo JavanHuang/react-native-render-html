@@ -48,7 +48,8 @@ export default class HTML extends PureComponent {
         baseFontStyle: PropTypes.object.isRequired,
         textSelectable: PropTypes.bool,
         renderersProps: PropTypes.object,
-        allowFontScaling: PropTypes.bool
+        allowFontScaling: PropTypes.bool,
+        numberOfLines: PropTypes.number
     }
 
     static defaultProps = {
@@ -65,7 +66,8 @@ export default class HTML extends PureComponent {
         tagsStyles: {},
         classesStyles: {},
         textSelectable: false,
-        allowFontScaling: true
+        allowFontScaling: true,
+        numberOfLines: 5
     }
 
     constructor (props) {
@@ -395,7 +397,8 @@ export default class HTML extends PureComponent {
             ignoredStyles,
             ptSize,
             tagsStyles,
-            textSelectable
+            textSelectable,
+            numberOfLines
         } = props;
 
         return RNElements && RNElements.length ? RNElements.map((element, index) => {
@@ -458,6 +461,7 @@ export default class HTML extends PureComponent {
                             ignoredStyles,
                             allowedStyles
                         })}
+                    numberOfLines={numberOfLines}
                 >
                     { data }
                 </Text> :
@@ -475,6 +479,7 @@ export default class HTML extends PureComponent {
             if (Wrapper === Text) {
                 renderersProps.allowFontScaling = allowFontScaling;
                 renderersProps.selectable = textSelectable;
+                renderersProps.numberOfLines = numberOfLines;
             }
             return (
                 <Wrapper key={key} style={style} {...renderersProps}>

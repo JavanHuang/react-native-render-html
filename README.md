@@ -90,6 +90,7 @@ Prop | Description | Type | Required/Default
 `baseFontStyle` | The default style applied to `<Text>` components | `object` | `{ fontSize: 14 }`
 `allowFontScaling` | Specifies whether fonts should scale to respect Text Size accessibility settings | `boolean` | `true`
 `textSelectable` | Allow all texts to be selected | `boolean` | `false`
+`numberOfLines` | Dictate the number of lines to show in the <Text> wrapper | `number` | `5`
 `alterData` | Target some specific texts and change their content, see [altering content](#altering-content) | `function` | Optional
 `alterChildren` | Target some specific nested children and change them, see [altering content](#altering-content) | `function` | Optional
 `alterNode` | Target a specific node and change it, see [altering content](#altering-content) | `function` | Optional
